@@ -16,7 +16,6 @@ add_library(nr-rrc ${NRRRC_SRC_FILES})
 
 add_executable(nr-rrc-reader supp/config.h
         nr-rrc-reader.c
-        nr-sp-cell-config-info.h
         DL-DCCH.c
         stdafx.h
         targetver.h)

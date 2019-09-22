@@ -1,9 +1,7 @@
 #include "CellGroupConfig.h"
 #include "DL-DCCH-Message.h"
 
-#include "nr-sp-cell-config-info.h"
-
-int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info)
+int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,int nNumber)
 {
     asn_dec_rval_t ph = {RC_FAIL, 0};
 	RRCReconfiguration_t *rrcReconfiguration = 0;

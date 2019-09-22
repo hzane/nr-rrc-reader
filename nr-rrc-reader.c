@@ -1,11 +1,9 @@
-#include "nr-sp-cell-config-info.h"
 #include "stdafx.h"
 
-int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info);
+int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,int nNumber);
 
 int main(int argc, char* argv[])
 {
-	NRSpCellConfigInfo info;
 	unsigned char buffer[410];
     const char* fn = "dl-dcch.dat";
     if (argc>1)
@@ -16,7 +14,7 @@ int main(int argc, char* argv[])
 
 	fread(buffer,sizeof(buffer),1,ptr); // read 10 bytes to our buffer
 
-    PERDecodeRRCReconfiguration(16640, buffer, sizeof(buffer), &info);
+    PERDecodeRRCReconfiguration(16640, buffer, sizeof(buffer) );
 
 
     fclose(ptr);
