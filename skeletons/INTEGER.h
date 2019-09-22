@@ -5,8 +5,8 @@
 #ifndef	_INTEGER_H_
 #define	_INTEGER_H_
 
-#include <skeletons/asn_application.h>
-#include <skeletons/asn_codecs_prim.h>
+#include <asn_application.h>
+#include <asn_codecs_prim.h>
 
 #ifdef __cplusplus
 extern "C" {

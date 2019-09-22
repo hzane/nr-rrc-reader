@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.14)
 project(nr_rrc_reader)
 
 set(CMAKE_C_FLAGS -Wno-parentheses-equality)
@@ -868,7 +868,6 @@ set(SRC_FILES         nr-rrc/AccessStratumRelease.c
         nr-rrc/PDSCH-TimeDomainResourceAllocationList.h
         nr-rrc/PDU-SessionID.c
         nr-rrc/PDU-SessionID.h
-        nr-rrc/pdu_collection.c
         skeletons/per_decoder.c
         skeletons/per_decoder.h
         skeletons/per_encoder.c

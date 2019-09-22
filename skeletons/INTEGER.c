@@ -3,10 +3,10 @@
  * All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
+#include <asn_internal.h>
+#include <INTEGER.h>
+#include <asn_codecs_prim.h>	/* Encoder and decoder of a primitive type */
 #include <errno.h>
-#include <skeletons/INTEGER.h>
-#include <skeletons/asn_codecs_prim.h> /* Encoder and decoder of a primitive type */
-#include <skeletons/asn_internal.h>
 
 /*
  * INTEGER basic type description.

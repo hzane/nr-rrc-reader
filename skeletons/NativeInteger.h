@@ -12,8 +12,8 @@
 #ifndef	_NativeInteger_H_
 #define	_NativeInteger_H_
 
-#include <skeletons/INTEGER.h>
-#include <skeletons/asn_application.h>
+#include <asn_application.h>
+#include <INTEGER.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -2,9 +2,9 @@
  * Copyright (c) 2005-2017 Lev Walkin <vlm@lionet.info>. All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
-#include <skeletons/asn_internal.h>
-#include <skeletons/asn_system.h>
-#include <skeletons/per_support.h>
+#include <asn_system.h>
+#include <asn_internal.h>
+#include <per_support.h>
 
 /*
  * X.691-201508 #10.9 General rules for encoding a length determinant.

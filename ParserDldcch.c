@@ -109,9 +109,9 @@ int DL_DCCH_CellGroupConfig_Message_Parse(unsigned short MsgID, unsigned char* p
 	asn_dec_rval_t rval = uper_decode_complete(0,&asn_DEF_RRCReconfiguration,(void **)&rrcReconfiguration_t,pRawData,nNumber);	
 	if (rval.code != RC_FAIL &&  rrcReconfiguration_t->criticalExtensions.present == RRCReconfiguration__criticalExtensions_PR_rrcReconfiguration)
 	{
-		if (rrcReconfiguration_t->criticalExtensions.choice.rrcReconfiguration->secondaryCellGroup != NULL)
+		if (rrcReconfiguration_t->criticalExtensions.rrcReconfiguration->secondaryCellGroup != NULL)
 		{
-			OCTET_STRING_t *pData = (OCTET_STRING_t*)rrcReconfiguration_t->criticalExtensions.choice.rrcReconfiguration->secondaryCellGroup;
+			OCTET_STRING_t *pData = (OCTET_STRING_t*)rrcReconfiguration_t->criticalExtensions.rrcReconfiguration->secondaryCellGroup;
 			if (pData->size > 0 )
 			{					
 				DL_DCCH_CellGroupConfig_Message_Parse_Info(pData->buf,pData->size,Info);				

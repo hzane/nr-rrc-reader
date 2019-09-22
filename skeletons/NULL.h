@@ -5,8 +5,8 @@
 #ifndef	ASN_TYPE_NULL_H
 #define	ASN_TYPE_NULL_H
 
-#include <skeletons/BOOLEAN.h>
-#include <skeletons/asn_application.h>
+#include <asn_application.h>
+#include <BOOLEAN.h>
 
 #ifdef __cplusplus
 extern "C" {

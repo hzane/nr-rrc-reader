@@ -2,9 +2,9 @@
  * Copyright (c) 2003, 2004 Lev Walkin <vlm@lionet.info>. All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
+#include <asn_internal.h>
+#include <ber_tlv_tag.h>
 #include <errno.h>
-#include <skeletons/asn_internal.h>
-#include <skeletons/ber_tlv_tag.h>
 
 ssize_t
 ber_fetch_tag(const void *ptr, size_t size, ber_tlv_tag_t *tag_r) {

@@ -4,8 +4,8 @@
  * 	All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
-#include <skeletons/asn_system.h>
-#include <skeletons/xer_support.h>
+#include <asn_system.h>
+#include <xer_support.h>
 
 /* Parser states */
 typedef enum {

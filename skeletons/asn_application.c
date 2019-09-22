@@ -2,9 +2,9 @@
  * Copyright (c) 2017 Lev Walkin <vlm@lionet.info>. All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
+#include <asn_internal.h>
+#include <asn_application.h>
 #include <errno.h>
-#include <skeletons/asn_application.h>
-#include <skeletons/asn_internal.h>
 
 static asn_enc_rval_t asn_encode_internal(const asn_codec_ctx_t *opt_codec_ctx,
                                           enum asn_transfer_syntax syntax,

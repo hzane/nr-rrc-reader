@@ -6,7 +6,7 @@
 #ifndef	ASN_IOC_H
 #define	ASN_IOC_H
 
-#include <skeletons/asn_system.h> /* Platform-specific types */
+#include <asn_system.h>		/* Platform-specific types */
 
 #ifdef __cplusplus
 extern "C" {

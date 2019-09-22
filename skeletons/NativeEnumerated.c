@@ -9,8 +9,8 @@
  * implementation deals with the standard (machine-specific) representation
  * of them instead of using the platform-independent buffer.
  */
-#include <skeletons/NativeEnumerated.h>
-#include <skeletons/asn_internal.h>
+#include <asn_internal.h>
+#include <NativeEnumerated.h>
 
 /*
  * NativeEnumerated basic type description.

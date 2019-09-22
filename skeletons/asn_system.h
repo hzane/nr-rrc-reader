@@ -74,7 +74,7 @@ typedef	unsigned int	uint32_t;
 #include <types/vxTypes.h>
 #else	/* !defined(__vxworks) */
 
-#include <inttypes.h> /* C99 specifies this file */
+#include <inttypes.h>	/* C99 specifies this file */
 #include <netinet/in.h> /* for ntohl() */
 #define	sys_ntohl(foo)	ntohl(foo)
 #endif	/* defined(__vxworks) */

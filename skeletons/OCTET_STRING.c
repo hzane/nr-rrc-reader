@@ -3,10 +3,10 @@
  * All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
+#include <asn_internal.h>
+#include <OCTET_STRING.h>
+#include <BIT_STRING.h>	/* for .bits_unused member */
 #include <errno.h>
-#include <skeletons/BIT_STRING.h> /* for .bits_unused member */
-#include <skeletons/OCTET_STRING.h>
-#include <skeletons/asn_internal.h>
 
 /*
  * OCTET STRING basic type description.

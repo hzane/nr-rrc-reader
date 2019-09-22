@@ -3,9 +3,9 @@
  * All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
-#include <skeletons/asn_SEQUENCE_OF.h>
-#include <skeletons/asn_internal.h>
-#include <skeletons/constr_SEQUENCE_OF.h>
+#include <asn_internal.h>
+#include <constr_SEQUENCE_OF.h>
+#include <asn_SEQUENCE_OF.h>
 
 /*
  * The DER encoder of the SEQUENCE OF type.

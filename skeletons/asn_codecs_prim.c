@@ -2,9 +2,9 @@
  * Copyright (c) 2003, 2004 Lev Walkin <vlm@lionet.info>. All rights reserved.
  * Redistribution and modifications are permitted subject to BSD license.
  */
+#include <asn_internal.h>
+#include <asn_codecs_prim.h>
 #include <errno.h>
-#include <skeletons/asn_codecs_prim.h>
-#include <skeletons/asn_internal.h>
 
 /*
  * Decode an always-primitive type.
