@@ -38,7 +38,7 @@ int DL_DCCH_UplinkConfigCommon_Message_Parse_Info(unsigned char* pRawData,int nN
 
 
 
-int DL_DCCH_CellGroupConfig_Message_Parse_Info(unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info)
+int PERDecodeCellGroupConfig(unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info)
 {
 	CellGroupConfig_t *ue_ellGroupConfig_t = 0;
 
@@ -103,22 +103,23 @@ int DL_DCCH_CellGroupConfig_Message_Parse_Info(unsigned char* pRawData,int nNumb
 
 
 
-int DL_DCCH_CellGroupConfig_Message_Parse(unsigned short MsgID, unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info)
+int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info)
 {
-	RRCReconfiguration_t *rrcReconfiguration_t = 0;
-	asn_dec_rval_t rval = uper_decode_complete(0,&asn_DEF_RRCReconfiguration,(void **)&rrcReconfiguration_t,pRawData,nNumber);	
-	if (rval.code != RC_FAIL &&  rrcReconfiguration_t->criticalExtensions.present == RRCReconfiguration__criticalExtensions_PR_rrcReconfiguration)
-	{
-		if (rrcReconfiguration_t->criticalExtensions.rrcReconfiguration->secondaryCellGroup != NULL)
-		{
-			OCTET_STRING_t *pData = (OCTET_STRING_t*)rrcReconfiguration_t->criticalExtensions.rrcReconfiguration->secondaryCellGroup;
-			if (pData->size > 0 )
-			{					
-				DL_DCCH_CellGroupConfig_Message_Parse_Info(pData->buf,pData->size,Info);				
-			}
-		}
-	}
+    asn_dec_rval_t ph = {RC_FAIL, 0};
+	RRCReconfiguration_t *rrcReconfiguration = 0;
+    CellGroupConfig_t *cellGroupConfig = 0;
 
-	ASN_STRUCT_FREE(asn_DEF_RRCReconfiguration, (void*)rrcReconfiguration_t);
+	asn_dec_rval_t rval = aper_decode_complete(0,&asn_DEF_RRCReconfiguration,(void **)&rrcReconfiguration,pRawData,nNumber);
+
+	RRCReconfiguration_IEs_t* rc = 	rrcReconfiguration ? rrcReconfiguration->criticalExtensions.rrcReconfiguration : 0;
+	OCTET_STRING_t * sc = rc ? rc->secondaryCellGroup : 0;
+
+    rval = sc ? aper_decode_complete(0,&asn_DEF_CellGroupConfig,(void**)&cellGroupConfig,sc->buf,sc->size) : ph;
+
+    // xer_fprint(0, &asn_DEF_RRCReconfiguration, rrcReconfiguration);
+    xer_fprint(0, &asn_DEF_CellGroupConfig, cellGroupConfig);
+
+    ASN_STRUCT_FREE(asn_DEF_CellGroupConfig, cellGroupConfig);
+	ASN_STRUCT_FREE(asn_DEF_RRCReconfiguration, (void*)rrcReconfiguration);
 	return rval.code;	
 }
