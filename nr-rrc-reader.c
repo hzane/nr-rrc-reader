@@ -3,8 +3,6 @@
 
 int DL_DCCH_CellGroupConfig_Message_Parse(unsigned short MsgID, unsigned char* pRawData,int nNumber,NRSpCellConfigInfo *Info);
 
-typedef int (__cdecl *proc_t)(unsigned short MsgID, unsigned char* pRawData,int nNumber, NRSpCellConfigInfo *Info);
-
 int main(int argc, char* argv[])
 {
 	NRSpCellConfigInfo info;
