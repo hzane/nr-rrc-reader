@@ -17,7 +17,7 @@ int PERDecodeRRCReconfiguration(unsigned short MsgID, unsigned char* pRawData,in
     rval = sc ? aper_decode_complete(0,&asn_DEF_CellGroupConfig,(void**)&cellGroupConfig,sc->buf,sc->size) : ph;
 
     // xer_fprint(0, &asn_DEF_RRCReconfiguration, rrcReconfiguration);
-    xer_fprint(0, &asn_DEF_CellGroupConfig, cellGroupConfig);
+    asn_fprint(0, &asn_DEF_CellGroupConfig, cellGroupConfig);
 
     ASN_STRUCT_FREE(asn_DEF_CellGroupConfig, cellGroupConfig);
 	ASN_STRUCT_FREE(asn_DEF_RRCReconfiguration, (void*)rrcReconfiguration);
