@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-rm -rf nr-rrc-f60 && mkdir nr-rrc-f60
+rm -rf nr-rrc && mkdir nr-rrc
 
-/usr/local/bin/asn1c    -fcompound-names \
+/usr/local/bin/asn1c \
+    -fcompound-names \
     -findirect-choice \
     -gen-PER \
     -pdu=all \
     -no-gen-example \
-    -no-gen-OER \
     -fincludes-quoted \
     -funnamed-unions \
-    -D nr-rrc-f60 38331-f60.asn
+    -D nr-rrc 38331-f60.asn
 
 #/usr/local/bin/asn1c    -fcompound-names \
 #    -findirect-choice \

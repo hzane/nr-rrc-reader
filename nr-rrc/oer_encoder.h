@@ -5,7 +5,7 @@
 #ifndef	OER_ENCODER_H
 #define	OER_ENCODER_H
 
-#include <skeletons/asn_application.h>
+#include <asn_application.h>
 
 #ifdef __cplusplus
 extern "C" {

@@ -5,9 +5,9 @@
  */
 #ifndef ASN_DISABLE_OER_SUPPORT
 
+#include <asn_internal.h>
+#include <constr_CHOICE.h>
 #include <errno.h>
-#include <skeletons/asn_internal.h>
-#include <skeletons/constr_CHOICE.h>
 
 /*
  * Return a standardized complex structure.

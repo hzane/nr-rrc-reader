@@ -5,10 +5,10 @@
  */
 #ifndef ASN_DISABLE_OER_SUPPORT
 
+#include <asn_internal.h>
+#include <constr_SET_OF.h>
+#include <asn_SET_OF.h>
 #include <errno.h>
-#include <skeletons/asn_SET_OF.h>
-#include <skeletons/asn_internal.h>
-#include <skeletons/constr_SET_OF.h>
 
 /*
  * This macro "eats" the part of the buffer which is definitely "consumed",

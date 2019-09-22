@@ -5,9 +5,9 @@
  */
 #ifndef ASN_DISABLE_OER_SUPPORT
 
+#include <asn_internal.h>
+#include <NativeEnumerated.h>
 #include <errno.h>
-#include <skeletons/NativeEnumerated.h>
-#include <skeletons/asn_internal.h>
 
 static long
 asn__nativeenumerated_convert(const uint8_t *b, const uint8_t *end) {

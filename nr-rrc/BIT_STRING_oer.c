@@ -5,9 +5,9 @@
  */
 #ifndef ASN_DISABLE_OER_SUPPORT
 
+#include <asn_internal.h>
+#include <BIT_STRING.h>
 #include <errno.h>
-#include <skeletons/BIT_STRING.h>
-#include <skeletons/asn_internal.h>
 
 asn_dec_rval_t
 BIT_STRING_decode_oer(const asn_codec_ctx_t *opt_codec_ctx,
